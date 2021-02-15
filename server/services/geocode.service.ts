@@ -15,7 +15,7 @@ export const address2Coord = async (address: string): Promise<Coordinates | null
             const coordinatesList: Array<any> = features.filter((item: any) => item.properties.confidence >= 0.5).sort((x: any, y: any) =>  y.properties.confidence - x.properties.confidence);
             if (coordinatesList.length > 0) {
                 console.log(coordinatesList[0])
-                const [ lat, lng ] = coordinatesList[0].geometry.coordinates;
+                const [ lng, lat ] = coordinatesList[0].geometry.coordinates;
                 return {
                     lat: lat,
                     lng: lng
