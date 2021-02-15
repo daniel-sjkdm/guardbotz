@@ -7,6 +7,7 @@ import config from "config";
 import AuthRouter from "./routes/auth.routes";
 import { createConnection } from "typeorm";
 import IncidentRouter from "./routes/incident.routes";
+import GeocodeRouter from "./routes/geocode.routes";
 
 
 
@@ -23,6 +24,7 @@ app.use(cors({
 // Firebase (authentication)
 app.use("/api/auth", AuthRouter);
 app.use("/api/incident", IncidentRouter);
+app.use("/api/geocode", GeocodeRouter);
 // Postgresql database
 
 
