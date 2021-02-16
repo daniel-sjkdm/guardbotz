@@ -1,15 +1,12 @@
 import { Router } from "express";
-import { deleteUser } from "../controllers/user.controller";
+import {
+	deleteUserController,
+	getUserController,
+} from "../controllers/user.controller";
 
+const UserRouter = Router();
 
+UserRouter.get("/", getUserController);
+UserRouter.delete("/", deleteUserController);
 
-const router = Router();
-
-
-//router.put("/", updateIncident);
-//router.get("/", getIncidents);
-//router.get("/:id", getIncident)
-router.delete("/", deleteUser);
-
-
-export default router;
+export default UserRouter;
