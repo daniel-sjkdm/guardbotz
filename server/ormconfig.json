@@ -10,5 +10,8 @@
 		"entitiesDir": "database/entity",
 		"migrationsDir": "database/migration",
 		"subscribersDir": "database/subscriber"
+	},
+	"ssl": {
+		"rejectUnauthorized": false
 	}
 }
