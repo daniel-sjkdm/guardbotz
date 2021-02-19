@@ -1,24 +1,14 @@
 {
-   "type": "postgres",
-   "host": "localhost",
-   "port": 5432,
-   "username": "moonzombie",
-   "password": "moonzombie",
-   "database": "guardbotdb",
-   "synchronize": true,
-   "logging": false,
-   "entities": [
-      "database/entity/**/*.ts"
-   ],
-   "migrations": [
-      "database/migration/**/*.ts"
-   ],
-   "subscribers": [
-      "database/subscriber/**/*.ts"
-   ],
-   "cli": {
-      "entitiesDir": "database/entity",
-      "migrationsDir": "database/migration",
-      "subscribersDir": "database/subscriber"
-   }
+	"type": "postgres",
+	"url": "postgres://qgdgbbudkfaqxf:f2234cb34135e960652ef903f2847aee22b6a851931a9801c07ebbff86efe309@ec2-52-50-171-4.eu-west-1.compute.amazonaws.com:5432/d95kmpnq9be11",
+	"synchronize": true,
+	"logging": false,
+	"entities": ["database/entity/**/*.ts"],
+	"migrations": ["database/migration/**/*.ts"],
+	"subscribers": ["database/subscriber/**/*.ts"],
+	"cli": {
+		"entitiesDir": "database/entity",
+		"migrationsDir": "database/migration",
+		"subscribersDir": "database/subscriber"
+	}
 }
