@@ -1,6 +1,6 @@
 ## Typeorm migrations
 
-First, define the __entities__. Then after each change, generate a new migration
+First, define the **entities**. Then after each change, generate a new migration
 file with the following command:
 
 ```
@@ -8,7 +8,7 @@ $ yarn typeorm migration:generate --name <migrationName>
 ```
 
 Then the migrations needs to be executed in order to create the database with the credentials
-provided in the __ormconfig.json_ file, run the migrations with:
+provided in the \__ormconfig.json_ file, run the migrations with:
 
 ```
 $ yarn typeorm migration:run
@@ -29,7 +29,13 @@ $ ts-node ./node_modules/typeorm/cli.js migration:run
 $ yarn run cross-env NODE_ENV=development ts-node-dev --respawn server.ts
 ```
 
+## PostGIS
 
+To enable GIS in postgresql to query coordinates:
+
+```sql
+=> create extension postgis;
+```
 
 ## Using linters (ESLint) with Typescript
 
@@ -42,7 +48,7 @@ by using plugins like a typescript parser that generates an AST compatible with 
 To implement the linter in typescript projects, install the following:
 
 ```bash
-$ yarn add -D 
+$ yarn add -D
 ```
 
 A nice set of rules used by developers is the airbnb configuration:
@@ -52,39 +58,39 @@ $ yarn add -D eslint-config-airbnb-typescript
 ```
 
 Also, if using eslint with prettier, make sure to install the config package to avoid eslint reporting on code formatting done by prettier:
+
 ```bash
 $ yarn add -D eslint-config-prettier
 ```
 
 If you're interested in linting jest tests:
+
 ```bash
 $ yarn add -D eslint-plugin-jest
 ```
 
 For node.js best practices:
+
 ```bash
 $ yarn add -D eslint-plugin-node
 ```
 
 Now that everything is installed, create:
 
-* .eslintrc.js
+- .eslintrc.js
 
 ```javascript
 module.exports = {
-    root: true,
-    parser: '@typescript-eslint/parser',
-    plugins: [
-      '@typescript-eslint',
-      'jest'
-    ],
-    extends: [
-        'airbnb-typescript',
-        'prettier',
-        'prettier/@typescript-eslint',
-        'plugin:jest/recommended'
-    ],
+	root: true,
+	parser: "@typescript-eslint/parser",
+	plugins: ["@typescript-eslint", "jest"],
+	extends: [
+		"airbnb-typescript",
+		"prettier",
+		"prettier/@typescript-eslint",
+		"plugin:jest/recommended",
+	],
 };
 ```
 
-* .eslintignore
+- .eslintignore
