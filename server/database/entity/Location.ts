@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Geometry } from "geojson";
 import { Incident } from "./Incident";
 
 @Entity()
@@ -7,7 +8,7 @@ export class Location {
 	id: string;
 
 	@Column({ type: "point", nullable: false, unique: true })
-	coordinates: string;
+	coordinates: Geometry;
 
 	@Column({ type: "text", nullable: false, unique: true })
 	address: string;
