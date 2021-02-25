@@ -4,13 +4,13 @@ import { Incident } from "./Incident";
 
 @Entity()
 export class Location {
-	@PrimaryGeneratedColumn({ type: "uuid" })
+	@PrimaryGeneratedColumn("uuid")
 	id: string;
 
-	@Column({ type: "point", nullable: false, unique: true })
+	@Column({ type: "geometry", nullable: false, unique: true })
 	coordinates: Geometry;
 
-	@Column({ type: "text", nullable: false, unique: true })
+	@Column({ type: "text", nullable: false })
 	address: string;
 
 	@OneToMany(() => Incident, (incident) => incident.location, { cascade: true })
